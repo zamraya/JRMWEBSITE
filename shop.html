@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crochet Gallery</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      text-align: center;
+    }
+
+    header {
+      background: #ffb6c1;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+
+    .back-btn {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      text-decoration: none;
+      font-size: 36px;   /* big arrow */
+      font-weight: bold;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    .back-btn:hover {
+      color: #e91e63; 
+    }
+
+    nav {
+      margin: 15px 0;
+    }
+
+    nav button {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    nav button.active {
+      background: #e91e63;
+      color: white;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Back button -->
+    <a href="index.html" class="back-btn">←</a>
+    <h1>JRM's Crochet Gallery</h1>
+  </header>
+
+  <nav>
+    <button onclick="showPage('bouquets')" class="active">Bouquets</button>
+    <button onclick="showPage('money bouquets')"> Money Bouquets</button>
+    <button onclick="showPage('keychains')">Keychains</button>
+  </nav>
+
+  <!-- Bouquets Page -->
+  <div id="bouquets" class="page active">
+    <div class="gallery">
+      <img src="flower1.jpg" alt="Flower 1">
+      <img src="flower2.jpg" alt="Flower 2">
+      <img src="flower3.jpg" alt="Flower 3">
+    </div>
+  </div>
+
+  <!-- Money Bouquets Page -->
+  <div id="money bouquets" class="page">
+    <div class="gallery">
+      <img src="bouquet1.jpg" alt="Bouquet 1">
+      <img src="bouquet2.jpg" alt="Bouquet 2">
+      <img src="bouquet3.jpg" alt="Bouquet 3">
+    </div>
+  </div>
+
+  <!-- Keychains Page -->
+  <div id="keychains" class="page">
+    <div class="gallery">
+      <img src="keychain1.jpg" alt="Keychain 1">
+      <img src="keychain2.jpg" alt="Keychain 2">
+      <img src="keychain3.jpg" alt="Keychain 3">
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+
+      document.querySelectorAll('nav button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

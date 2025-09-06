@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRM's Crochet</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<header>
+<div class="nav">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100089601383321" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="https://www.instagram.com/jrms.crochet?igsh=aXJ3ZnI1Z2tveTNs" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:jrmscrochet@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.tiktok.com/@jrms.crochet" target="_blank">
+           <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+    
+  <div class="left-section">
+    <div class="logo">
+        <img src="/images/logo.jpg" alt="My Website Logo" class="logo-img">
+        <strong>JRM's Crochet</strong>
+    </div>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+    
+      <div class="nav-links">
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li class="dropdown">
+        <a href="#" id="categories-btn">Categories <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu" id="dropdown-menu">
+          <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li class="nav-dropdown">
+  <a href="#explore"><i class="fas fa-compass"></i> Explore <span class="arrow">▶</span></a>
+  <ul class="nav-dropdown-menu nav-submenu">
+    <li><a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a></li>
+    <li><a href="#on-sale"><i class="fas fa-tags"></i> On Sale</a></li>
+    <li><a href="#videos"><i class="fas fa-video"></i> Video Tutorials</a></li>
+  </ul>
+</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+    
+    <script>
+      function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+    </script>
+
+    <div class="right-section">
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <a href="login.html" class="login-btn">Log in</a>
+    </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let categoriesBtn = document.getElementById("categories-btn");
+    let dropdownMenu = document.getElementById("dropdown-menu");
+
+    categoriesBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", function(event) {
+      if (!categoriesBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+  });
+</script>
+</header>
+
+<section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1><i><span>JRM's Crochet</span></i></h1>
+        <h5>Handmade Crafts</h5>
+        <a href="#explore" class="btn">Explore Here</a>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="about-content-container">
+        <div class="about-image">
+            <img src="/images/profile" alt="About Us Image">
+        </div>
+        <div class="about-text">
+            <h1><span>ABOUT</span> ME</h1>
+            <h2>Living, Learning, Growing</h2>
+            <p>I am Jam Riah B. Manza, 20 years old, a 3rd-year Computer Engineering student. Outside of my studies, I enjoy crocheting, which helps me develop patience, creativity, and attention to detail. As an only child, I have grown to be independent and adaptable, traits that have shaped both my personal and academic life. My curiosity and love for learning push me to explore new innovations and seek opportunities for growth, both personally and professionally.</p>
+        </div>
+    </div>
+</section>
+
+<section id="explore" class="explore">
+<div class="feature-section">
+  <div class="feature-card">
+    <i class="fas fa-shopping-bag icon"></i>
+    <h3>Shop</h3>
+    <p>Explore our shop for quality products at affordable prices.</p>
+    <a href="#shop" class="btn">Shop Now</a>
+  </div>
+
+  <div class="feature-card">
+    <i class="fas fa-tags icon"></i>
+    <h3>On Sale</h3>
+    <p>Browse our shop to see what items are currently on sale.</p>
+    <a href="#on-sale" class="btn">Shop Now</a>
+  </div>
+
+  <div class="feature-card">
+    <i class="fas fa-video icon"></i>
+    <h3>Video Tutorials</h3>
+    <p>Watch tutorials created to help you use our products.</p>
+    <a href="#videos" class="btn">View Now</a>
+  </div>
+</div>
+  
+</section>
+    <footer>
+            <p class="copyright">© 2025 All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
